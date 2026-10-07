@@ -6,7 +6,7 @@
 
 ---
 
-## Tech Stack
+## 1. Tech Stack
 - **Language**: Java 17
 - **Framework**: Spring Boot 4.1.1, Spring Data JPA
 - **Database**: H2 (In-memory Database)
@@ -15,7 +15,7 @@
 
 ---
 
-## 핵심 비즈니스 로직 및 약관 적용
+## 2. 핵심 비즈니스 로직 및 약관 적용
 1. **전월 실적 제외 검증 엔진**
     - **무이자 할부 (`isInterestFree = true`)**: 전 카드사 공통으로 실적 합산 및 혜택 대상 전면 배제
     - **세금 및 공과금 (`category = 'TAX'`)**: 전월 실적 인정 대상에서 제외 처리
@@ -26,16 +26,16 @@
 
 ---
 
-## 🚀 API Endpoint 명세
+## 3. API Endpoint 명세
 
-### 1. 실적 및 혜택 수동/자동 산출
+### 실적 및 혜택 수동/자동 산출
 - **HTTP Method**: `POST`
 - **URL**: `/api/calculator/calculate/{userNum}`
 - **Description**: 해당 사용자의 전체 거래 내역을 조회하여 실적 인정 여부(`isPerformanceTarget`) 및 혜택 금액(`appliedBenefitAmount`)을 계산 후 업데이트 및 반환합니다.
 
 ---
 
-## 🗄 데이터베이스 구조 (ERD)
+## 4. 데이터베이스 구조 (ERD)
 - **Card**: 카드사 및 카드명 정보
 - **UserCard**: 사용자별 발급된 카드 정보
 - **Transaction**: 결제 거래 내역 (결제금액, 무이자여부, 카테고리, 실적제외여부, 혜택금액)
